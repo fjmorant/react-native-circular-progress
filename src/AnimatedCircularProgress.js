@@ -4,7 +4,6 @@ import CircularProgress from './CircularProgress';
 const AnimatedProgress = Animated.createAnimatedComponent(CircularProgress);
 
 export default class AnimatedCircularProgress extends React.Component {
-  
   props: {
   style?: any,
   size: number,
