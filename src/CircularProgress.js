@@ -1,9 +1,27 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { View, Platform } from 'react-native';
 import { Surface, Shape, Path, Group } from '../../react-native/Libraries/ART/ReactNativeART';
 import MetricsPath from 'art/metrics/path';
 
 export default class CircularProgress extends React.Component {
+  
+  props: {
+  style?: any,
+  size: number,
+  fill: number,
+  width: number,
+  tintColor?: string,
+  backgroundColor?: string,
+  rotation?: number,
+  linecap?: string,
+  children?: Function,
+}
+  defaultProps = {
+  tintColor: 'black',
+  backgroundColor: '#e4e4e4',
+  rotation: 90,
+  linecap: 'butt'
+}
 
   circlePath(cx, cy, r, startDegree, endDegree) {
 
@@ -53,23 +71,4 @@ export default class CircularProgress extends React.Component {
       </View>
     )
   }
-}
-
-CircularProgress.propTypes = {
-  style: View.propTypes.style,
-  size: PropTypes.number.isRequired,
-  fill: PropTypes.number.isRequired,
-  width: PropTypes.number.isRequired,
-  tintColor: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  rotation: PropTypes.number,
-  linecap: PropTypes.string,
-  children: PropTypes.func
-}
-
-CircularProgress.defaultProps = {
-  tintColor: 'black',
-  backgroundColor: '#e4e4e4',
-  rotation: 90,
-  linecap: 'butt'
 }
